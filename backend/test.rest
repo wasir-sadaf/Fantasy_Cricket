@@ -1,0 +1,94 @@
+//---------Test for Authentication---------
+post http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "name" : "Wasir Huzaifa",
+    "email" : "wasir@gmail.com",
+    "password" : "1234" 
+}
+###
+
+post http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email" : "wasir@gmail.com",
+    "password" : "1234"
+}
+###
+
+//---------Test for League---------
+post http://localhost:3000/league
+Content-Type: application/json
+
+{
+    "name" : "BPL",
+    "type" : "public",
+    "created_by" : 1,
+    "start_date" : "2025-03-01",
+    "last_date" : "2025-06-15"
+}
+
+###
+get http://localhost:3000/api/league
+
+###
+get http://localhost:3000/league/1
+###
+
+//---------Test for Real Team---------
+post http://localhost:3000/api/team
+Content-Type: application/json
+
+{
+    "name" : "Avalance",
+    "country" : "Bangladesh",
+    "league_id" : 1
+}
+###
+get http://localhost:3000/api/team
+###
+
+//---------Test for Player---------
+POST http://localhost:3000/api/player
+Content-Type: application/json
+
+{
+  "name": "kane williamson",
+  "role": "batsman",
+  "real_team_id": 1,
+  "nationality": "new zealand",
+  "price": 950000
+}
+###
+GET http://localhost:3000/api/player/1
+###
+
+//---------Test for Fantasy Team---------
+post http://localhost:3000/api/fantasyteam
+Content-Type: application/json
+
+{
+    "user_id" : 1,
+    "league_id" : 1,
+    "team_name" : "Iron Fist"
+}
+###
+
+get http://localhost:3000/api/fantasyteam
+###
+
+//---------Test for Fantasy Team Player---------
+post http://localhost:3000/api/fantasyteamplayer
+Content-Type: application/json
+
+{
+    "fantasy_team_id": 1,
+    "player_id": 1,
+    "is_captain": true,
+    "is_vice_captain": false
+}
+###
+
+get http://localhost:3000/api/fantasyteamplayer/1
