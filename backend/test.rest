@@ -42,7 +42,7 @@ post http://localhost:3000/api/team
 Content-Type: application/json
 
 {
-    "name" : "Avalance",
+    "name" : "Lunatic-Six",
     "country" : "Bangladesh",
     "league_id" : 1
 }
@@ -92,3 +92,179 @@ Content-Type: application/json
 ###
 
 get http://localhost:3000/api/fantasyteamplayer/1
+###
+
+//---------Test for Venue---------
+post http://localhost:3000/api/venue
+Content-Type:  application/json
+
+{
+    "name": "Eden Gardens",
+    "city": "Kolkata",
+    "country": "India",
+    "capacity": 68000
+}
+###
+get http://localhost:3000/api/venue
+###
+
+//---------Test for Matches---------
+post http://localhost:3000/api/match
+Content-Type: application/json
+
+{
+    "home_team_id": 1,
+    "away_team_id": 2,
+    "match_date": "2025-03-15",
+    "venue_id": 1,
+    "league_id": 1
+}
+###
+get http://localhost:3000/api/match
+###
+
+//---------Test for PlayerStats---------
+post http://localhost:3000/api/playerstats
+Content-Type: application/json
+
+{
+    "player_id": 1,
+    "match_id": 1,
+    "runs": 50,
+    "wickets": 2,
+    "catches": 1
+}
+###
+
+get http://localhost:3000/api/playerstats
+###
+
+
+//---------Test for Batting Stats---------
+post http://localhost:3000/api/battingstats
+Content-Type: application/json
+
+{
+    "player_id": 1,
+    "match_id": 1,
+    "runs": 50,
+    "balls": 40,
+    "fours": 4,
+    "sixes": 2,
+    "strike_rate": 125
+}
+###
+
+get http://localhost:3000/api/battingstats
+###
+
+//---------Test for Bowling Stats---------
+
+post http://localhost:3000/api/bowlingstats
+Content-Type: application/json
+
+{
+    "player_id": 1,
+    "match_id": 1,
+    "overs": 8,
+    "runs_given": 45,
+    "wickets": 3,
+    "economy": 5.62
+}
+###
+
+get http://localhost:3000/api/bowlingstats
+###
+
+//---------Test for Fielding Stats---------
+
+post http://localhost:3000/api/fieldingstats
+Content-Type: application/json
+
+{
+    "player_id": 1,
+    "match_id": 1,
+    "catches": 2,
+    "run_outs": 1,
+    "stumpings": 0
+}
+###
+
+get http://localhost:3000/api/fieldingstats
+###
+
+
+//---------Test for Weeks---------
+post http://localhost:3000/api/week
+Content-Type: application/json
+
+{
+  "start_date": "2025-10-14",
+  "end_date": "2025-10-20"
+}
+### 
+
+get http://localhost:3000/api/week
+###
+
+//---------Test for Fixtures---------
+post http://localhost:3000/api/fixture
+Content-Type: application/json
+
+{
+  "match_id": 1,
+  "week_id": 1,
+  "status": "scheduled"
+}
+###
+
+get http://localhost:3000/api/fixture
+###
+
+//---------Test for Transaction---------
+post http://localhost:3000/api/transaction
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "amount": 500,
+    "type": "deposit",
+    "date": "2025-10-12",
+    "status": "completed"
+}
+###
+
+get http://localhost:3000/api/transaction
+###
+
+
+
+//---------Test for Wallet---------
+post http://localhost:3000/api/wallet
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "balance": 1000
+}
+###
+
+get http://localhost:3000/api/wallet
+###
+
+//---------Test for deposit---------
+
+post http://localhost:3000/api/deposit
+Content-Type: application/json
+
+{
+    "wallet_id": 1,
+    "amount": 5000,
+    "method": "bonus",
+    "date": "2025-10-12"
+}
+###
+
+get http://localhost:3000/api/deposit
+###
+//---------Test for Fielding Stats---------
