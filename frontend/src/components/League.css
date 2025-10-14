@@ -190,3 +190,26 @@
     grid-template-columns: 1fr;
   }
 }
+
+.league-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profile-btn {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.profile-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+}

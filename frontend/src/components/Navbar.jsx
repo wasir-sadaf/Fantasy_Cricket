@@ -19,14 +19,21 @@ function Navbar({ isAuthenticated, onLogout, user }) {
         <ul className="navbar-menu">
           {isAuthenticated ? (
             <>
-              <li><Link to="/profile">Profile</Link></li>
+              <li><Link to="/dashboard">Dashboard</Link></li>
               <li><Link to="/league">Leagues</Link></li>
               <li><Link to="/team-selection">Team Selection</Link></li>
-              <li className="user-info">
-                <span>👤 {user?.username || 'User'}</span>
+              <li>
+                <button
+                  className="profile-btn"
+                  onClick={() => navigate('/profile')}
+                >
+                  {user?.name || 'Profile'}
+                </button>
               </li>
               <li>
-                <button onClick={handleLogout} className="logout-btn">Logout</button>
+                <button onClick={handleLogout} className="logout-btn">
+                  Logout
+                </button>
               </li>
             </>
           ) : (

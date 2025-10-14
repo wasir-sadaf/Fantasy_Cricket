@@ -30,19 +30,31 @@
 .navbar-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
-.navbar-menu li a {
+.navbar-menu li a,
+.navbar-menu li .profile-btn {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.2s;
 }
 
-.navbar-menu li a:hover {
+.navbar-menu li a:hover,
+.navbar-menu li .profile-btn:hover {
   color: #ffd700;
+  transform: translateY(-2px);
+}
+
+.profile-btn {
+  background: transparent;
+  border: 2px solid white;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 .user-info span {
@@ -58,11 +70,12 @@
   border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .logout-btn:hover {
   background-color: #ee5a6f;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
@@ -73,5 +86,10 @@
 
   .navbar-logo h2 {
     font-size: 1.2rem;
+  }
+
+  .profile-btn,
+  .logout-btn {
+    padding: 0.4rem 0.8rem;
   }
 }

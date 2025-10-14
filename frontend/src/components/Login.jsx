@@ -42,8 +42,11 @@ function Login({ onLogin }) {
           setServerError(data.message || 'Login failed')
         } else {
           // successful login
-          onLogin(data.user)  // call parent function to store user info
-          navigate('/dashboard') // redirect after login
+          onLogin(data.user)  // store user in App state
+          localStorage.setItem('user', JSON.stringify(data.user))
+          localStorage.setItem('userId', data.user.userId || data.user.id)
+
+          navigate('/dashboard') // redirect to dashboard
         }
       } catch (err) {
         setServerError('Server error, try again later')
