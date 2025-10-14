@@ -14,6 +14,8 @@ const playerRoutes = require("./routes/players");
 
 const weeksRoutes = require("./routes/weeks");
 
+const fantasyPrivateLeagueRoutes = require("./routes/fantasyPrivateLeagues");
+const fantasyPrivateLeagueMembersRoutes = require("./routes/fantasyPrivateLeagueMembers");
 const fantasyTeamRoutes = require("./routes/fantasyTeams");
 const fantasyTeamPlayerRoutes = require("./routes/fantasyTeamPlayers");
 
@@ -41,6 +43,9 @@ app.use("/api/team", teamRoutes);
 app.use("/api/player", playerRoutes);
 
 app.use("/api/week", weeksRoutes);
+
+app.use("/api/fantasy-private-league", fantasyPrivateLeagueRoutes);
+app.use("/api/fantasy-private-league-member", fantasyPrivateLeagueMembersRoutes);
 
 app.use("/api/fantasyteam", fantasyTeamRoutes);
 app.use("/api/fantasyteamplayer", fantasyTeamPlayerRoutes);
