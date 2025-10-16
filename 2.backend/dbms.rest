@@ -1,0 +1,50 @@
+//---------Test for League---------
+post http://localhost:3000/league
+Content-Type: application/json
+
+{
+    "name" : "BPL",
+    "type" : "public",
+    "created_by" : 1,
+    "start_date" : "2025-03-01",
+    "last_date" : "2025-06-15"
+}
+
+###
+get http://localhost:3000/api/league
+
+###
+get http://localhost:3000/league/1
+###
+
+
+//---------Test for Fantasy Private Leagues---------
+post http://localhost:3000/api/fantasy-private-league
+Content-Type: application/json
+
+{
+    "name": "Super League",
+    "created_by": 1,
+    "invite_code": "1234",
+    "max_users": 10
+}
+
+###
+
+get http://localhost:3000/api/fantasy-private-league
+###
+
+
+//---------Test for Fantasy Private League Members---------
+
+post http://localhost:3000/api/fantasy-private-league-member/join
+Content-Type: application/json
+
+{
+    "private_league_id": 1,
+    "user_id": 2
+}
+###
+
+get http://localhost:3000/api/fantasy-private-league-member/1/members
+###
