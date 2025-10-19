@@ -7,6 +7,17 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const userRoutes = require("./routes/users");
+const allLeagueRoutes = require("./routes/allLeagues");
+const allTeamRoutes = require("./routes/allTeams");
+const allMatchRoutes = require("./routes/allMatches");
+const allStatsRoutes = require("./routes/allStats");
+const allTransactionRoutes = require("./routes/allTransactions");
+
+
+
+
+
 const authRoutes = require("./routes/auth");
 const leagueRoutes = require("./routes/leagues");
 const teamRoutes = require("./routes/teams");
@@ -36,6 +47,16 @@ const depositRoutes = require("./routes/deposits");
 
 
 //============================================================================================
+
+app.use("/api/user", userRoutes);
+app.use("/api/all-league", allLeagueRoutes);
+app.use("/api/all-team", allTeamRoutes);
+app.use("/api/all-match", allMatchRoutes);
+app.use("/api/all-stats", allStatsRoutes);
+app.use("/api/all-transaction", allTransactionRoutes);
+
+
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/league", leagueRoutes);

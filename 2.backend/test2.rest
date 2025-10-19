@@ -1,0 +1,31 @@
+//---------users---------
+get http://localhost:3000/api/user/
+###
+
+//---------users profile---------
+get http://localhost:3000/api/user/profile/1
+###
+
+post http://localhost:3000/api/user/profile/
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "bio": "I love cricket",
+  "avatar_url": "http://example.com/avatar.png",
+  "country": "Bangladesh"
+}
+###
+
+
+//---------all league---------
+GET http://localhost:3000/api/all-league/
+###
+
+//---------all teams---------
+GET http://localhost:3000/api/all-team/realteams
+###
+
+
+//---------all mathces---------
+GET http://localhost:3000/api/all-match/matches
